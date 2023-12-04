@@ -65,7 +65,7 @@ body {
   } 
  
   .logo-img {
-    width: 50%;
+    width: 800px;
     border-radius: 50px;
     box-shadow: 20px 10px 10px rgb(51, 10, 174)
     }
@@ -106,7 +106,7 @@ body {
 
     #start-button {
     position:absolute;
-    top: 65%;
+    top: 60%;
     left:50%;
     transform: translate(-50%, -50%);
     background-color:darkorchid;
@@ -122,6 +122,28 @@ body {
     cursor: pointer;
     }
 
-  
+    #game-container{
+      display:flex;
+      width:100vw;
+      justify-content: center;
+    }
+
+    #game-screen {
+    display: none;
+    background-color:rgb(45, 2, 86);
+    position: absolute;
+    background-size: cover;
+    padding: 100px 0px;    
+    } 
+
+    .logo-img2 {
+      width: 800px;
+      height:540px;
+      opacity: .5;
+      box-shadow: 20px 10px 10px rgb(51, 10, 174)
+      }
+    
+
+
 
   
