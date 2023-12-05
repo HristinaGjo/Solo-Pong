@@ -1,5 +1,6 @@
 window.addEventListener('load', ()=>{
     const startButton=document.getElementById('start-button');
+    const restartButton=document.getElementById('restart-button')
 
     
 let game
@@ -12,18 +13,24 @@ function startGame(){
 
 }
 
-startButton.addEventListener('click', ()=> startGame())
+startButton.addEventListener('click', function (){ 
+    startGame()
+})
 
+restartButton.addEventListener('click', function () {
+    // startGame()
+    location.reload()
+  })
 
 
 document.addEventListener('keydown', event => {
     if(event.code==='ArrowLeft'){
     console.log('go left')
-        game.player.directionX=-1
+        game.player.directionX=-2
     }
     if(event.code==='ArrowRight'){
         console.log('go right')
-        game.player.directionX=1
+        game.player.directionX=2
     }
 })
 

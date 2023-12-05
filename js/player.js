@@ -21,7 +21,6 @@ class Player {
 
         this.gameScreen.appendChild(this.element)
 
-       
 
     }
 
