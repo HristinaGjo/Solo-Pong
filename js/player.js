@@ -10,7 +10,7 @@ class Player {
 
 
         this.element=document.createElement('img')
-        this.element.src='images/Block.png'
+        this.element.src='/images/Block.png'
         this.element.style.position='absolute'
 
         this.element.style.height=`${this.height}px`
