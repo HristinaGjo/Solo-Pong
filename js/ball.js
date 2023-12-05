@@ -14,7 +14,7 @@ class Ball{
 
 
         this.element=document.createElement('img')
-        this.element.src='./images/Ball.png'
+        this.element.src='images/Ball.png'
         this.element.style.position='absolute'
         
 
