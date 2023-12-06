@@ -1,4 +1,5 @@
 class Ball{
+
     constructor(gameScreen, player){
         this.gameScreen=gameScreen
         this.player=player
@@ -8,16 +9,16 @@ class Ball{
         this.top=500
         this.directionX=2;
         this.directionY=-2;
-
+        this.score=0
+        this.lives=3
+        this.isGameOver = false
         
-
-
+           
 
         this.element=document.createElement('img')
         this.element.src='./images/ball.png'
         this.element.style.position='absolute'
         
-
 
         this.element.style.width=`${this.width}px`
         this.element.style.height=`${this.height}px`
@@ -28,7 +29,6 @@ class Ball{
         this.gameScreen.appendChild(this.element)
 
         console.log('this ball position',this.left)
-
     }
 
     move(){
@@ -43,15 +43,22 @@ class Ball{
         }  if (this.left===300){
             this.directionX=(this.directionX)*(-1)
         }  if((this.left<(this.player.left+this.player.width)) && (this.left>this.player.left) && (this.top===(this.player.top-this.player.height))){
-            this.directionY=(this.directionY)*(-1)
-        }  
-        
-        
-        /* if (this.top==600) {
-            this.top+=this.directionY
-            this.left+=this.directionX
-        } */
+            this.directionY=(this.directionY)*(-1) 
+            this.score+=10       
+        }  if (this.top>=600){
+            this.lives-=1
+            this.left=700
+            this.top=200
 
+           /* console.log('Lives decremented', this.lives); */
+
+        }  if (this.lives <= 0) {
+            this.isGameOver = true
+            console.log('Game over! Lives:', this.lives);
+          }
+
+        document.getElementById('score').innerText = this.score
+        document.getElementById('lives').innerText = this.lives
 
         console.log('this player position',this.player.left,this.player.top,this.player.width)
  
@@ -73,3 +80,9 @@ class Ball{
             this.left=1125
             this.top=400
         }*/
+
+
+         /* if (this.top==600) {
+            this.top+=this.directionY
+            this.left+=this.directionX
+        } */

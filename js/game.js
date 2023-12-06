@@ -5,6 +5,9 @@ class Game{
         this.endScreen=document.getElementById('game-end')
         this.height=600
         this.width=1500
+        this.animateId = null
+        
+        
     }
 
     start(){
@@ -22,15 +25,50 @@ class Game{
         this.gameLoop()
     }
 
-    gameLoop() {
-        this.player.move()
-        this.ball.move();
-
-      if (this.ball.top>=600){
+    gameLoop() { 
+        if (this.ball.isGameOver){
         this.gameScreen.style.display='none'
         this.endScreen.style.display='block'
-    }
-        this.animateId = requestAnimationFrame(() => this.gameLoop())
-
+        cancelAnimationFrame(this.animateId);
+        } else {
+            this.player.move()
+            this.ball.move()
+            this.animateId = requestAnimationFrame(() => this.gameLoop())
+        }
     }
 }
+
+/* if (this.ball.top>=600){
+    this.gameScreen.style.display='none'
+    this.endScreen.style.display='block'
+} */
+
+
+/* gameLoop() { 
+    if (this.ball.isGameOver){
+    this.gameScreen.style.display='none'
+    this.endScreen.style.display='block'
+    cancelAnimationFrame(this.animateId);
+    } else {
+        this.player.move()
+        this.ball.move()
+        this.animateId = requestAnimationFrame(() => this.gameLoop())
+    }
+
+} */
+
+
+/* gameLoop() { 
+    this.player.move()
+    this.ball.move()
+
+    if (this.ball.isGameOver){
+    this.gameScreen.style.display='none'
+    this.endScreen.style.display='block'
+    
+    } else{
+    this.animateId = requestAnimationFrame(() => this.gameLoop())
+
+    }
+       
+  } */
