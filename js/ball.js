@@ -45,9 +45,16 @@ class Ball{
             this.directionX=(this.directionX)*(-1)
         }  if (this.left===300){
             this.directionX=(this.directionX)*(-1)
-        }  if((this.left<(this.player.left+this.player.width)) && (this.left>this.player.left) && (this.top===(this.player.top-this.player.height))){
+        }  if((this.left<(this.player.left+this.player.width)) && (this.left>=this.player.left) && (this.top===(this.player.top-this.player.height))){
             this.directionY=(this.directionY)*(-1) 
-            this.score+=10       
+            this.score+=10     
+            console.log('Before width reduction:', this.player.width);
+         this.player.width -= 10; 
+         if (this.player.width < 0) {
+        this.player.width = 0;      
+         }
+
+    console.log('After width reduction:', this.player.width);
         }  if (this.top>=600){
             this.lives-=1
             this.left=700
@@ -63,9 +70,9 @@ class Ball{
         document.getElementById('score').innerText = this.score
         document.getElementById('lives').innerText = this.lives
 
-        console.log('this player position',this.player.left,this.player.top,this.player.width)
+        /* console.log('this player position',this.player.left,this.player.top,this.player.width)*/
  
-
+        this.player.updateWidth()
         this.updatePosition();
 
     }

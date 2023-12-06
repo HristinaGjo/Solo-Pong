@@ -8,10 +8,13 @@ class Player {
         this.directionX = 0
         
 
+        
 
         this.element=document.createElement('img')
         this.element.src='./images/block.png'
         this.element.style.position='absolute'
+        this.element.style.backgroundColor='white'
+        
 
         this.element.style.height=`${this.height}px`
         this.element.style.width=`${this.width}px`
@@ -21,12 +24,9 @@ class Player {
 
         this.gameScreen.appendChild(this.element)
 
-
     }
 
     
-
-
     move(){
         if(this.left <=1050){
             this.left+=this.directionX
@@ -45,8 +45,14 @@ class Player {
         /*console.log(this.left)*/
     }
 
+    updateWidth() {
+        this.element.style.width = `${this.width}px`; 
+    }
+
     updatePosition() {
         this.element.style.left = `${this.left}px`
       }
+
+   
 
 }
