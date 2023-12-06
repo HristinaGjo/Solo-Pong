@@ -13,11 +13,15 @@ class Ball{
         this.lives=3
         this.isGameOver = false
         
-           
+        
+       
+        
+        
 
         this.element=document.createElement('img')
         this.element.src='./images/ball.png'
         this.element.style.position='absolute'
+        /*this.element.style.boxShadow= '0 0 20px 20px #2980b9'*/
         
 
         this.element.style.width=`${this.width}px`
@@ -28,17 +32,16 @@ class Ball{
 
         this.gameScreen.appendChild(this.element)
 
-        console.log('this ball position',this.left)
+       /* console.log('this ball position',this.left) */
     }
 
     move(){
 
-        this.top+=this.directionY
-        this.left+=this.directionX
-
+        this.top+=this.directionY *1.5
+        this.left+=this.directionX *1.5
         if(this.top<=105){
             this.directionY =(this.directionY)*(-1)
-        }  if(this.left===1150){
+        }  if(this.left>=1150){
             this.directionX=(this.directionX)*(-1)
         }  if (this.left===300){
             this.directionX=(this.directionX)*(-1)
