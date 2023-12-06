@@ -86,3 +86,28 @@ class Ball{
             this.top+=this.directionY
             this.left+=this.directionX
         } */
+
+
+
+       /* move(){
+
+            this.top+=this.directionY
+            this.left+=this.directionX
+    
+            if(this.top<=105){
+                this.directionY =(this.directionY)*(-1)
+            }  if(this.left===1150){
+                this.directionX=(this.directionX)*(-1)
+            }  if (this.left===300){
+                this.directionX=(this.directionX)*(-1)
+            }  if((this.left<(this.player.left+this.player.width)) && (this.left>this.player.left) && (this.top===(this.player.top-this.player.height))){
+                this.directionY=(this.directionY)*(-1) 
+                this.score+=10       
+            }  if (this.top>=600){
+                this.lives-=1
+                this.left=700
+                this.top=200
+    
+               console.log('Lives decremented', this.lives); */
+    
+          
