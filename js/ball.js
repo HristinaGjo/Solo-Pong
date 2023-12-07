@@ -29,7 +29,9 @@ class Ball{
 
        /* console.log('this ball position',this.left) */
     }
-
+     doRandom(min, max) {
+        return Math.random() * (max - min) + min;
+      }
     move(){
 
         this.top+=this.directionY
@@ -41,21 +43,25 @@ class Ball{
         }  if (this.left<=300){
             this.directionX=(this.directionX)*(-1)
         }  if(((this.left)<(this.player.left+this.player.width+this.width)) &&
-         ((this.left)>=(this.player.left-this.width)) && 
-         (this.top===(this.player.top-this.player.height))){
+         ((this.left)>(this.player.left-this.width)) && 
+         (this.top>(this.player.top-this.player.height))){
             this.directionY=(this.directionY)*(-1) 
             this.score+=10     
             /*console.log('Before width reduction:', this.player.width);*/
-            this.player.width -= 10; 
+            this.player.width -= 2; 
             if (this.player.width < 0) {
             this.player.width = 0;      
          }
 
          /*console.log('After width reduction:', this.player.width);*/
-        }  if (this.top>=600){
+        }  if (this.top>=650){
             this.lives-=1
-            this.left=700
-            this.top=200
+
+
+            this.left = this.doRandom(400,1050)
+            this.top = this.doRandom(150,300);
+            this.directionY=(-1)*this.directionY
+            console.log(this.gameScreen.animatedId)
 
            /* console.log('Lives decremented', this.lives); */
 
@@ -73,47 +79,13 @@ class Ball{
         this.updatePosition();
     }
 
+
     updatePosition() {
         this.element.style.left = `${this.left}px`
         this.element.style.top = `${this.top}px`
       }
+
 }
 
-/*if(this.left<=1125 && this.top>=105){
-            this.left+=2
-            this.top-=2
-        }else{
-            this.left=1125
-            this.top=400
-        }*/
 
-
-         /* if (this.top==600) {
-            this.top+=this.directionY
-            this.left+=this.directionX
-        } */
-
-
-
-       /* move(){
-
-            this.top+=this.directionY
-            this.left+=this.directionX
-    
-            if(this.top<=105){
-                this.directionY =(this.directionY)*(-1)
-            }  if(this.left===1150){
-                this.directionX=(this.directionX)*(-1)
-            }  if (this.left===300){
-                this.directionX=(this.directionX)*(-1)
-            }  if((this.left<(this.player.left+this.player.width)) && (this.left>this.player.left) && (this.top===(this.player.top-this.player.height))){
-                this.directionY=(this.directionY)*(-1) 
-                this.score+=10       
-            }  if (this.top>=600){
-                this.lives-=1
-                this.left=700
-                this.top=200
-    
-               console.log('Lives decremented', this.lives); */
-    
           
