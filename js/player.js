@@ -13,7 +13,8 @@ class Player {
         this.element=document.createElement('img')
         this.element.src='./images/block.png'
         this.element.style.position='absolute'
-        this.element.style.backgroundColor='white'
+        this.element.style.borderRadius='8px'
+        this.element.style.boxShadow='0 0 5px 5px #2980b9'
         
 
         this.element.style.height=`${this.height}px`

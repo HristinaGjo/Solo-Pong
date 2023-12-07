@@ -7,21 +7,16 @@ class Ball{
         this.height=25
         this.left=360
         this.top=500
-        this.directionX=10;
-        this.directionY=-10;
+        this.directionX=4;
+        this.directionY=-4;
         this.score=0
         this.lives=3
         this.isGameOver = false
-        
-        
-       
-        
-        
-
+           
         this.element=document.createElement('img')
         this.element.src='./images/ball.png'
         this.element.style.position='absolute'
-        /*this.element.style.boxShadow= '0 0 20px 20px #2980b9'*/
+        this.element.style.boxShadow=' #2980b9'
         
 
         this.element.style.width=`${this.width}px`
@@ -48,10 +43,11 @@ class Ball{
         }  if((this.left<(this.player.left+this.player.width)) && (this.left>=this.player.left) && (this.top===(this.player.top-this.player.height))){
             this.directionY=(this.directionY)*(-1) 
             this.score+=10     
-            console.log('Before width reduction:', this.player.width);
-         this.player.width -= 10; 
-         if (this.player.width < 0) {
-        this.player.width = 0;      
+            
+            /*console.log('Before width reduction:', this.player.width);*/
+            this.player.width -= 10; 
+           if (this.player.width < 0) {
+            this.player.width = 0;      
          }
 
     /*console.log('After width reduction:', this.player.width);*/
