@@ -7,8 +7,8 @@ class Ball{
         this.height=25
         this.left=360
         this.top=500
-        this.directionX=4;
-        this.directionY=-4;
+        this.directionX=3;
+        this.directionY=-3;
         this.score=0
         this.lives=3
         this.isGameOver = false
@@ -38,7 +38,7 @@ class Ball{
             this.directionY =(this.directionY)*(-1)
         }  if(this.left>=1150){
             this.directionX=(this.directionX)*(-1)
-        }  if (this.left===300){
+        }  if (this.left<=300){
             this.directionX=(this.directionX)*(-1)
         }  if((this.left<(this.player.left+this.player.width)) && (this.left>=this.player.left) && (this.top===(this.player.top-this.player.height))){
             this.directionY=(this.directionY)*(-1) 
