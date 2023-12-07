@@ -44,11 +44,11 @@ class Ball{
             this.directionX=(this.directionX)*(-1)
         }  if(((this.left)<(this.player.left+this.player.width+this.width)) &&
          ((this.left)>(this.player.left-this.width)) && 
-         (this.top>(this.player.top-this.player.height))){
+         (this.top>=(this.player.top-this.player.height)) && (this.top<=(this.player.top-this.player.height+5))){
             this.directionY=(this.directionY)*(-1) 
             this.score+=10     
             /*console.log('Before width reduction:', this.player.width);*/
-            this.player.width -= 2; 
+            this.player.width -= 5; 
             if (this.player.width < 0) {
             this.player.width = 0;      
          }
@@ -56,12 +56,9 @@ class Ball{
          /*console.log('After width reduction:', this.player.width);*/
         }  if (this.top>=650){
             this.lives-=1
-
-
             this.left = this.doRandom(400,1050)
             this.top = this.doRandom(150,300);
             this.directionY=(-1)*this.directionY
-            console.log(this.gameScreen.animatedId)
 
            /* console.log('Lives decremented', this.lives); */
 
