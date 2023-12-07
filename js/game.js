@@ -3,6 +3,8 @@ class Game{
         this.startScreen=document.getElementById('game-intro');
         this.gameScreen=document.getElementById('game-screen');
         this.endScreen=document.getElementById('game-end')
+        this.gameResultElement = document.getElementById('game-result');
+
         this.height=600
         this.width=1500
         this.animateId = null
@@ -26,18 +28,24 @@ class Game{
     }
 
     gameLoop() { 
+        this.player.move()
+        this.ball.move()
         if (this.ball.isGameOver){
         this.gameScreen.style.display='none'
         this.endScreen.style.display='block'
-        cancelAnimationFrame(this.animateId);
-        } else {
-            this.player.move()
-            this.ball.move()
-            this.animateId = requestAnimationFrame(() => this.gameLoop())
-        }
-    }
-}
+        this.gameResultElement.innerText = 'You lost.';}
 
+        if (this.player.width === 0) {
+            this.gameScreen.style.display='none'
+            this.endScreen.style.display='block'
+            this.gameResultElement.innerText = 'Congratulations! You won!';
+        
+        }
+            this.animateId = requestAnimationFrame(() => this.gameLoop())
+        
+    
+}
+}
 /* if (this.ball.top>=600){
     this.gameScreen.style.display='none'
     this.endScreen.style.display='block'

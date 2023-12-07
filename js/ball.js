@@ -7,8 +7,8 @@ class Ball{
         this.height=25
         this.left=360
         this.top=500
-        this.directionX=2;
-        this.directionY=-2;
+        this.directionX=10;
+        this.directionY=-10;
         this.score=0
         this.lives=3
         this.isGameOver = false
@@ -37,8 +37,8 @@ class Ball{
 
     move(){
 
-        this.top+=this.directionY *1.5
-        this.left+=this.directionX *1.5
+        this.top+=this.directionY
+        this.left+=this.directionX 
         if(this.top<=105){
             this.directionY =(this.directionY)*(-1)
         }  if(this.left>=1150){
@@ -54,7 +54,7 @@ class Ball{
         this.player.width = 0;      
          }
 
-    console.log('After width reduction:', this.player.width);
+    /*console.log('After width reduction:', this.player.width);*/
         }  if (this.top>=600){
             this.lives-=1
             this.left=700
@@ -64,7 +64,7 @@ class Ball{
 
         }  if (this.lives <= 0) {
             this.isGameOver = true
-            console.log('Game over! Lives:', this.lives);
+            /* console.log('Game over! Lives:', this.lives); */
           }
 
         document.getElementById('score').innerText = this.score

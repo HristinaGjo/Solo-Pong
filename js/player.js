@@ -28,16 +28,16 @@ class Player {
 
     
     move(){
-        if(this.left <=1050){
+        if(this.left <=1075){
             this.left+=this.directionX
         } else {
-            this.left=1050
+            this.left=1075
         }
 
-        if(this.left>=350){
+        if(this.left>=325){
             this.left+=this.directionX
         } else{
-            this.left=350
+            this.left=325
         }
         
         /*console.log(this.directionX)*/
