@@ -54,8 +54,7 @@ class Game{
         
         }
             this.animateId = requestAnimationFrame(() => this.gameLoop())
-        
-    
+
 }
 }
 /* if (this.ball.top>=600){

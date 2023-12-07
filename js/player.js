@@ -8,8 +8,6 @@ class Player {
         this.directionX = 0
         
 
-        
-
         this.element=document.createElement('img')
         this.element.src='./images/block.png'
         this.element.style.position='absolute'
@@ -29,10 +27,10 @@ class Player {
 
     
     move(){
-        if(this.left <=1075){
+        if(this.left <=1075+(100-this.width)){
             this.left+=this.directionX
         } else {
-            this.left=1075
+            this.left=1075+(100-this.width)
         }
 
         if(this.left>=325){
@@ -53,7 +51,5 @@ class Player {
     updatePosition() {
         this.element.style.left = `${this.left}px`
       }
-
-   
 
 }

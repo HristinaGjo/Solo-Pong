@@ -40,17 +40,18 @@ class Ball{
             this.directionX=(this.directionX)*(-1)
         }  if (this.left<=300){
             this.directionX=(this.directionX)*(-1)
-        }  if((this.left<(this.player.left+this.player.width)) && (this.left>=this.player.left) && (this.top===(this.player.top-this.player.height))){
+        }  if(((this.left)<(this.player.left+this.player.width+this.width)) &&
+         ((this.left)>=(this.player.left-this.width)) && 
+         (this.top===(this.player.top-this.player.height))){
             this.directionY=(this.directionY)*(-1) 
             this.score+=10     
-            
             /*console.log('Before width reduction:', this.player.width);*/
             this.player.width -= 10; 
-           if (this.player.width < 0) {
+            if (this.player.width < 0) {
             this.player.width = 0;      
          }
 
-    /*console.log('After width reduction:', this.player.width);*/
+         /*console.log('After width reduction:', this.player.width);*/
         }  if (this.top>=600){
             this.lives-=1
             this.left=700
@@ -61,7 +62,7 @@ class Ball{
         }  if (this.lives <= 0) {
             this.isGameOver = true
             /* console.log('Game over! Lives:', this.lives); */
-          }
+          } 
 
         document.getElementById('score').innerText = this.score
         document.getElementById('lives').innerText = this.lives
@@ -70,13 +71,12 @@ class Ball{
  
         this.player.updateWidth()
         this.updatePosition();
-
     }
+
     updatePosition() {
         this.element.style.left = `${this.left}px`
         this.element.style.top = `${this.top}px`
       }
-     
 }
 
 /*if(this.left<=1125 && this.top>=105){
