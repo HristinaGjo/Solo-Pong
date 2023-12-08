@@ -2,7 +2,7 @@
 
 ## [Play the Game!](https://hristinagjo.github.io/Solo-Pong/)
 
-![startscreen]()
+![startscreen](./docu/startscreen.png)
 
 
 # Overall vision
@@ -58,7 +58,7 @@ The challenge increases as the paddle's width reduces with each successful colli
 - DOM Manipulation
 - JS Classes
 - Local Storage
-- JS Audio() and JS Button() ?????????????????
+- JS Audio() and JS Button()
 
 # States
 
