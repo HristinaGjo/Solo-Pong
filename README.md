@@ -48,6 +48,8 @@ The challenge increases as the paddle's width reduces with each successful colli
 ## Aesthetics
 
  Drawing inspiration from the simplicity and engaging gameplay of the classic Pong, I wanted to introduce a modern twist by incorporating the vibes of Synthwave style. The visuals pop with vivid colors, and the game elements—fonts, buttons, and paddles—are neonlit, creating a vibrant and stylish atmosphere.
+
+ ![startscreen](./docu/gamescreen.png)
  
 
 # Technologies Used
