@@ -8,7 +8,7 @@
 # Overall vision
 
 I draw inspiration from the classic Arcade game Pong and made my own version of it “Solo Pong" for a single player. 
-Solo Pong is a game where the player should keep the ball bouncing, earn points by colliding with the paddle, and prevent the ball from reaching the bottom of the screen to avoid losing lives. 
+Solo Pong is a game where the player should  keep the ball bouncing while controlling the paddle. Earn points by hitting the ball and prevent it from reaching the bottom of the screen to avoid losing lives.
 The challenge increases as the paddle's width reduces with each successful collision, making it progressively harder to control the ball. The player wins when he manage to lose all the width of the paddle.
 
 ## Main Functionalities 
